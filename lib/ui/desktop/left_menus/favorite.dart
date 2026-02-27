@@ -316,7 +316,7 @@ class _FavoritesActions extends StatelessWidget {
                   localizations.favorites,
                   style: TextStyle(
                     fontSize: 12.5,
-                    color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.82),
+                    color: Theme.of(context).textTheme.bodyMedium?.color?.withValues(alpha: 0.82),
                   ),
                 ),
                 const Spacer(),

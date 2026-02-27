@@ -220,7 +220,7 @@ class RequestEditorState extends State<MobileRequestEditor> with SingleTickerPro
   }
 
   ///发送请求
-  sendRequest() async {
+  Future<void> sendRequest() async {
     var currentState = requestLineKey.currentState!;
     var headers = requestKey.currentState?.getHeaders();
     var requestBody = requestKey.currentState?.getBody();
@@ -810,7 +810,7 @@ class KeyValState extends State<KeyValWidget> {
   }
 
   //删除
-  deleteHeader(KeyVal keyVal) {
+  void deleteHeader(KeyVal keyVal) {
     showDialog(
         context: context,
         builder: (ctx) {

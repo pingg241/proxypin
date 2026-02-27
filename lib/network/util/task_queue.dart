@@ -24,7 +24,7 @@ class SequentialTaskQueue {
     runAllTask();
   }
 
-  runAllTask() async {
+  Future<void> runAllTask() async {
     if (!_isProcessing) {
       _isProcessing = true;
       _completer ??= Completer<void>();

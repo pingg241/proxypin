@@ -236,7 +236,7 @@ class MacSystemProxy implements SystemProxy {
     var name = await networkName();
     // Use a safer pipeline that avoids embedding awk's $2 (which complicates Dart string quoting).
     // This command finds the Device line, takes the following Hardware Port line, and extracts the part after ':'
-    var cmd = 'networksetup -listnetworkserviceorder | grep "Device: ${name}" -A 1 | grep "Hardware Port" | cut -d: -f2 | sed -n \'1p\'';
+    var cmd = 'networksetup -listnetworkserviceorder | grep "Device: $name" -A 1 | grep "Hardware Port" | cut -d: -f2 | sed -n \'1p\'';
     var results = await Process.run('bash', ['-c', cmd]);
     var out = results.stdout.toString().trim();
     if (out.isEmpty) return '';

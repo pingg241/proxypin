@@ -231,21 +231,22 @@ class DerIndefLenConverter {
   void parseTag() {
     if (isEOC(data, dataPos)) {
       int numOfEncapsulatedLenBytes = 0;
-      var elem;
-      int index;
+      int? startPos;
+      int index = -1;
       for (index = ndefsList.length - 1; index >= 0; index--) {
-        elem = ndefsList[index];
+        final elem = ndefsList[index];
         if (elem is int) {
+          startPos = elem;
           break;
         } else {
           numOfEncapsulatedLenBytes += (elem as Uint8List).length - 3;
         }
       }
-      if (index < 0) {
+      if (index < 0 || startPos == null) {
         throw Exception("EOC does not have matching indefinite-length tag");
       }
 
-      int sectionLen = dataPos - (elem as int) + numOfEncapsulatedLenBytes;
+      int sectionLen = dataPos - startPos + numOfEncapsulatedLenBytes;
       Uint8List sectionLenBytes = getLengthBytes(sectionLen);
       ndefsList[index] = sectionLenBytes;
       unresolved--;

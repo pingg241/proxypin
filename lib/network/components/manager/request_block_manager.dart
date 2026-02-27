@@ -61,12 +61,12 @@ class RequestBlockManager {
     });
   }
 
-  addBlockRequest(RequestBlockItem item) {
+  void addBlockRequest(RequestBlockItem item) {
     list.add(item);
     flushConfig();
   }
 
-  removeBlockRequest(int index) {
+  void removeBlockRequest(int index) {
     list.removeAt(index);
     flushConfig();
   }

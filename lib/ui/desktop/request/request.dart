@@ -29,7 +29,6 @@ import 'package:proxypin/network/channel/host_port.dart';
 import 'package:proxypin/network/http/http.dart';
 import 'package:proxypin/network/http/http_client.dart';
 import 'package:proxypin/storage/favorites.dart';
-import 'package:proxypin/ui/component/app_dialog.dart';
 import 'package:proxypin/ui/component/multi_window.dart';
 import 'package:proxypin/ui/component/utils.dart';
 import 'package:proxypin/ui/component/widgets.dart';
@@ -118,7 +117,7 @@ class _RequestWidgetState extends State<RequestWidget> {
             minLeadingWidth: 5,
             textColor: requestColor,
             selectedColor: requestColor,
-            selectedTileColor: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+            selectedTileColor: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
             leading: getIcon(widget.response.get() ?? widget.request.response, color: requestColor),
             trailing: widget.trailing,
             title: Text(title.fixAutoLines(), overflow: TextOverflow.ellipsis, maxLines: 2),

@@ -33,7 +33,7 @@ import '../components/host_filter.dart';
 
 class ProxyHelper {
   //请求本服务
-  static localRequest(ChannelContext channelContext, HttpRequest msg, Channel channel) async {
+  static Future<void> localRequest(ChannelContext channelContext, HttpRequest msg, Channel channel) async {
     //获取配置
     if (msg.path == '/config') {
       final requestRewrites = await RequestRewriteManager.instance;

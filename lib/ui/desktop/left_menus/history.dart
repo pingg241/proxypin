@@ -162,7 +162,7 @@ class _HistoryListState extends State<_HistoryListWidget> {
                 localizations.historyRecord,
                 style: TextStyle(
                   fontSize: 12.5,
-                  color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.82),
+                  color: Theme.of(context).textTheme.bodyMedium?.color?.withValues(alpha: 0.82),
                 ),
               ),
               bottom: const PreferredSize(preferredSize: Size.fromHeight(1), child: Divider(height: 1, thickness: 0.4)),
@@ -191,7 +191,7 @@ class _HistoryListState extends State<_HistoryListWidget> {
   }
 
   //导入har
-  import() async {
+  Future<void> import() async {
     final results = await FilePicker.platform.pickFiles(type: FileType.custom, allowedExtensions: ['har']);
     if (results == null || results.files.isEmpty) {
       return;

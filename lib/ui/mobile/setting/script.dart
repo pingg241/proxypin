@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2023 Hongen Wang All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -245,7 +245,7 @@ class _ScriptConsoleLogState extends State<ScriptConsoleLog> {
         ]),
         body: Container(
           padding: const EdgeInsets.only(top: 10, bottom: 10, right: 3),
-          decoration: BoxDecoration(border: Border.all(color: Colors.grey.withOpacity(0.2))),
+          decoration: BoxDecoration(border: Border.all(color: Colors.grey.withValues(alpha: 0.2))),
           child: Scrollbar(
               controller: _scrollController,
               thumbVisibility: true,
@@ -331,8 +331,8 @@ class _ScriptLogSmallWindowState extends State<ScriptLogSmallWindow> {
                 height: 320,
                 width: 180,
                 decoration: BoxDecoration(
-                    color: Colors.teal.withOpacity(0.3),
-                    border: Border.all(color: Colors.grey.withOpacity(0.8)),
+                    color: Colors.teal.withValues(alpha: 0.3),
+                    border: Border.all(color: Colors.grey.withValues(alpha: 0.8)),
                     borderRadius: const BorderRadius.all(Radius.circular(10))),
                 child: Stack(
                   children: [
@@ -550,10 +550,10 @@ class _ScriptEditState extends State<ScriptEdit> {
               children: [
                 // Name section
                 Card(
-                    color: Theme.of(context).colorScheme.surfaceContainerLow.withOpacity(0.5),
+                    color: Theme.of(context).colorScheme.surfaceContainerLow.withValues(alpha: 0.5),
                     elevation: 0,
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(color: Theme.of(context).dividerColor.withOpacity(0.4)),
+                        side: BorderSide(color: Theme.of(context).dividerColor.withValues(alpha: 0.4)),
                         borderRadius: BorderRadius.circular(8)),
                     child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
@@ -561,10 +561,10 @@ class _ScriptEditState extends State<ScriptEdit> {
 
                 // URLs section
                 Card(
-                    color: Theme.of(context).colorScheme.surfaceContainerLow.withOpacity(0.5),
+                    color: Theme.of(context).colorScheme.surfaceContainerLow.withValues(alpha: 0.5),
                     elevation: 0,
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(color: Theme.of(context).dividerColor.withOpacity(0.4)),
+                        side: BorderSide(color: Theme.of(context).dividerColor.withValues(alpha: 0.4)),
                         borderRadius: BorderRadius.circular(8)),
                     child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -615,10 +615,10 @@ class _ScriptEditState extends State<ScriptEdit> {
 
                 // Source section
                 Card(
-                    color: Theme.of(context).colorScheme.surfaceContainerLow.withOpacity(0.5),
+                    color: Theme.of(context).colorScheme.surfaceContainerLow.withValues(alpha: 0.5),
                     elevation: 0,
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(color: Theme.of(context).dividerColor.withOpacity(0.4)),
+                        side: BorderSide(color: Theme.of(context).dividerColor.withValues(alpha: 0.4)),
                         borderRadius: BorderRadius.circular(8)),
                     child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
@@ -649,10 +649,10 @@ class _ScriptEditState extends State<ScriptEdit> {
                 // Remote URL section
                 if (_useRemote)
                   Card(
-                      color: Theme.of(context).colorScheme.surfaceContainerLow.withOpacity(0.5),
+                      color: Theme.of(context).colorScheme.surfaceContainerLow.withValues(alpha: 0.5),
                       elevation: 0,
                       shape: RoundedRectangleBorder(
-                          side: BorderSide(color: Theme.of(context).dividerColor.withOpacity(0.4)),
+                          side: BorderSide(color: Theme.of(context).dividerColor.withValues(alpha: 0.4)),
                           borderRadius: BorderRadius.circular(8)),
                       child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
@@ -702,10 +702,10 @@ class _ScriptEditState extends State<ScriptEdit> {
 
                 // Script section
                 Card(
-                    color: Theme.of(context).colorScheme.surfaceContainerLow.withOpacity(0.5),
+                    color: Theme.of(context).colorScheme.surfaceContainerLow.withValues(alpha: 0.5),
                     elevation: 0,
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(color: Theme.of(context).dividerColor.withOpacity(0.4)),
+                        side: BorderSide(color: Theme.of(context).dividerColor.withValues(alpha: 0.4)),
                         borderRadius: BorderRadius.circular(8)),
                     child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -742,7 +742,7 @@ class _ScriptEditState extends State<ScriptEdit> {
                                   child: Container(
                                       decoration: BoxDecoration(
                                           color: Colors.grey.shade900,
-                                          border: Border.all(color: Colors.grey.withOpacity(0.2))),
+                                          border: Border.all(color: Colors.grey.withValues(alpha: 0.2))),
                                       child: SingleChildScrollView(
                                           child: CodeField(
                                         readOnly: _useRemote,
@@ -803,7 +803,7 @@ class _ScriptListState extends State<ScriptList> {
         persistentFooterButtons: multiple ? [globalMenu()] : null,
         body: Container(
             padding: const EdgeInsets.only(top: 10, bottom: 30),
-            decoration: BoxDecoration(border: Border.all(color: Colors.grey.withOpacity(0.2))),
+            decoration: BoxDecoration(border: Border.all(color: Colors.grey.withValues(alpha: 0.2))),
             child: Scrollbar(
                 child: ListView(children: [
               Row(
@@ -826,7 +826,7 @@ class _ScriptListState extends State<ScriptList> {
           height: 50,
           width: double.infinity,
           margin: const EdgeInsets.only(top: 10),
-          decoration: BoxDecoration(border: Border.all(color: Colors.grey.withOpacity(0.2)))),
+          decoration: BoxDecoration(border: Border.all(color: Colors.grey.withValues(alpha: 0.2)))),
       Positioned(
           top: 0,
           left: 0,
@@ -870,7 +870,7 @@ class _ScriptListState extends State<ScriptList> {
       final isRemote = item.remoteUrl != null && item.remoteUrl!.trim().isNotEmpty;
 
       return InkWell(
-          splashColor: primaryColor.withOpacity(0.3),
+          splashColor: primaryColor.withValues(alpha: 0.3),
           onTap: () async {
             if (multiple) {
               setState(() {
@@ -885,9 +885,9 @@ class _ScriptListState extends State<ScriptList> {
           onLongPress: () => showMenus(index),
           child: Container(
               color: selected.contains(index)
-                  ? primaryColor.withOpacity(0.8)
+                  ? primaryColor.withValues(alpha: 0.8)
                   : index.isEven
-                      ? Colors.grey.withOpacity(0.1)
+                      ? Colors.grey.withValues(alpha: 0.1)
                       : null,
               height: 45,
               padding: const EdgeInsets.all(5),
@@ -1027,7 +1027,11 @@ class _ScriptListState extends State<ScriptList> {
     }
 
     final XFile file = XFile.fromData(utf8.encode(jsonEncode(json)), mimeType: 'json');
-    Share.shareXFiles([file], fileNameOverrides: [fileName], sharePositionOrigin: box?.paintBounds);
+    await SharePlus.instance.share(ShareParams(
+      files: [file],
+      fileNameOverrides: [fileName],
+      sharePositionOrigin: box?.paintBounds,
+    ));
   }
 
   void enableStatus(bool enable) {

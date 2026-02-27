@@ -21,7 +21,6 @@ import 'package:highlight/languages/http.dart';
 import 'package:proxypin/network/http/http.dart';
 import 'package:proxypin/ui/component/utils.dart';
 import 'package:proxypin/ui/configuration.dart';
-import 'package:flutter/services.dart';
 import 'package:proxypin/utils/platform.dart';
 
 /// A reusable panel to display request/response headers.

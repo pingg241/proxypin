@@ -160,7 +160,7 @@ class _DomainFilterState extends State<DomainFilter> {
   }
 
   //导入
-  import() async {
+  Future<void> import() async {
 
     final FilePickerResult? result =
         await FilePicker.platform.pickFiles(allowedExtensions: ['config'], type: FileType.custom, initialDirectory: "/Downloads");
@@ -270,7 +270,7 @@ class _DomainListState extends State<DomainList> {
   bool changed = false;
   bool _isSecondaryTapHandled = false;
 
-  onChanged() {
+  void onChanged() {
     changed = true;
     widget.onChange.call();
   }
@@ -302,7 +302,7 @@ class _DomainListState extends State<DomainList> {
             child: Container(
                 padding: const EdgeInsets.only(top: 10),
                 height: 380,
-                decoration: BoxDecoration(border: Border.all(color: Colors.grey.withOpacity(0.2))),
+                decoration: BoxDecoration(border: Border.all(color: Colors.grey.withValues(alpha: 0.2))),
                 child: SingleChildScrollView(
                     child: Column(children: [
                   Row(
@@ -324,7 +324,7 @@ class _DomainListState extends State<DomainList> {
       return InkWell(
           highlightColor: Colors.transparent,
           splashColor: Colors.transparent,
-          hoverColor: primaryColor.withOpacity(0.3),
+          hoverColor: primaryColor.withValues(alpha: 0.3),
           onSecondaryTapDown: (details) => showMenus(details, index),
           //right click menus
           onDoubleTap: () => showEdit(index),
@@ -351,9 +351,9 @@ class _DomainListState extends State<DomainList> {
           },
           child: Container(
               color: selected[index] == true
-                  ? primaryColor.withOpacity(0.6)
+                  ? primaryColor.withValues(alpha: 0.6)
                   : index.isEven
-                      ? Colors.grey.withOpacity(0.1)
+                      ? Colors.grey.withValues(alpha: 0.1)
                       : null,
               height: 38,
               padding: const EdgeInsets.symmetric(vertical: 3),
@@ -368,7 +368,7 @@ class _DomainListState extends State<DomainList> {
   }
 
   //导出
-  export(List<int> indexes) async {
+  Future<void> export(List<int> indexes) async {
     if (indexes.isEmpty) return;
 
     String fileName = 'host-filters.config';
@@ -404,7 +404,7 @@ class _DomainListState extends State<DomainList> {
     });
   }
 
-  showEdit([int? index]) {
+  void showEdit([int? index]) {
     showDialog(
         context: context,
         barrierDismissible: false,
@@ -419,7 +419,7 @@ class _DomainListState extends State<DomainList> {
     });
   }
 
-  showGlobalMenu(Offset offset) {
+  void showGlobalMenu(Offset offset) {
     if (_isSecondaryTapHandled) {
       return;
     }
@@ -441,7 +441,7 @@ class _DomainListState extends State<DomainList> {
   }
 
   //点击菜单
-  showMenus(TapDownDetails details, int index) {
+  void showMenus(TapDownDetails details, int index) {
     if (selected.isNotEmpty) {
       showGlobalMenu(details.globalPosition);
       return;

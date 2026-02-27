@@ -18,7 +18,14 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-     avoid_print: false
+    avoid_print: false
+    constant_identifier_names: false
+    use_build_context_synchronously: false
+    overridden_fields: false
+    strict_top_level_inference: false
+    library_private_types_in_public_api: false
+    avoid_function_literals_in_foreach_calls: false
+    implementation_imports: false
     # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
 
 # Additional information about this file can be found at

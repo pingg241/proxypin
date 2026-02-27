@@ -168,7 +168,7 @@ class _RequestRuleListState extends State<RequestRuleList> {
         persistentFooterButtons: multiple ? [globalMenu()] : null,
         body: Container(
             padding: const EdgeInsets.only(top: 10, bottom: 30),
-            decoration: BoxDecoration(border: Border.all(color: Colors.grey.withOpacity(0.2))),
+            decoration: BoxDecoration(border: Border.all(color: Colors.grey.withValues(alpha: 0.2))),
             child: Scrollbar(
                 child: ListView(
               children: [
@@ -194,7 +194,7 @@ class _RequestRuleListState extends State<RequestRuleList> {
           height: 50,
           width: double.infinity,
           margin: const EdgeInsets.only(top: 10),
-          decoration: BoxDecoration(border: Border.all(color: Colors.grey.withOpacity(0.2)))),
+          decoration: BoxDecoration(border: Border.all(color: Colors.grey.withValues(alpha: 0.2)))),
       Positioned(
           top: 0,
           left: 0,
@@ -237,7 +237,7 @@ class _RequestRuleListState extends State<RequestRuleList> {
       return InkWell(
           highlightColor: Colors.transparent,
           splashColor: Colors.transparent,
-          hoverColor: primaryColor.withOpacity(0.3),
+          hoverColor: primaryColor.withValues(alpha: 0.3),
           onLongPress: () => showMenus(index),
           onTap: () async {
             if (multiple) {
@@ -252,9 +252,9 @@ class _RequestRuleListState extends State<RequestRuleList> {
           },
           child: Container(
               color: selected.contains(index)
-                  ? primaryColor.withOpacity(0.8)
+                  ? primaryColor.withValues(alpha: 0.8)
                   : index.isEven
-                      ? Colors.grey.withOpacity(0.1)
+                      ? Colors.grey.withValues(alpha: 0.1)
                       : null,
               height: 45,
               padding: const EdgeInsets.all(5),
@@ -562,7 +562,7 @@ class _RewriteRuleState extends State<RewriteRule> {
                             height: 50,
                             child: DropdownButtonFormField<RuleType>(
                               onSaved: (val) => rule.type = val!,
-                              value: ruleType,
+                              initialValue: ruleType,
                               decoration: const InputDecoration(
                                   border: OutlineInputBorder(),
                                   errorStyle: TextStyle(height: 0, fontSize: 0),

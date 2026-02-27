@@ -116,7 +116,7 @@ class CryptoBodyDecoder {
       final cipherBytes = candidate.sublist(n);
       // For non-PKCS7 paddings (e.g., ZeroPadding/raw) the cipher bytes length must be multiple of block size
       if (config.padding != 'PKCS7' && (cipherBytes.length % aesBlockSize != 0)) return null;
-      final ivStr = 'base64:' + base64.encode(ivBytes);
+      final ivStr = 'base64:${base64.encode(ivBytes)}';
       try {
         return AesUtils.decrypt(cipherBytes,
             key: config.key, keyLength: config.keyLength, mode: config.mode, padding: config.padding, iv: ivStr);

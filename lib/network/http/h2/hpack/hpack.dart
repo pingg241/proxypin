@@ -4,6 +4,8 @@
 
 /// HPACK specification. See here for more information:
 ///   https://tools.ietf.org/html/draft-ietf-httpbis-header-compression-10
+library;
+
 
 import 'dart:convert' show ascii;
 import 'dart:typed_data';
@@ -61,12 +63,10 @@ class Header {
 
 /// A stateful HPACK decoder.
 class HPackDecoder {
-  int _maxHeaderTableSize = 4096;
-
   final IndexTable _table = IndexTable();
 
   void updateMaxReceivingHeaderTableSize(int newMaximumSize) {
-    _maxHeaderTableSize = newMaximumSize;
+    _table.updateMaxSize(newMaximumSize);
   }
 
   List<Header> decode(List<int> data) {

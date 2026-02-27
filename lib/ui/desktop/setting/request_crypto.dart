@@ -246,7 +246,7 @@ class _CryptoRuleListState extends State<CryptoRuleList> {
       return InkWell(
         highlightColor: Colors.transparent,
         splashColor: Colors.transparent,
-        hoverColor: primaryColor.withOpacity(0.3),
+        hoverColor: primaryColor.withValues(alpha: 0.3),
         onDoubleTap: () => showEdit(index),
         onSecondaryTapDown: (details) => showMenus(details, index),
         onHover: (hover) {
@@ -272,9 +272,9 @@ class _CryptoRuleListState extends State<CryptoRuleList> {
         },
         child: Container(
           color: selected.contains(index)
-              ? primaryColor.withOpacity(0.6)
+              ? primaryColor.withValues(alpha: 0.6)
               : index.isEven
-                  ? Colors.grey.withOpacity(0.1)
+                  ? Colors.grey.withValues(alpha: 0.1)
                   : null,
           height: 32,
           padding: const EdgeInsets.all(5),

@@ -26,21 +26,33 @@ class AppleFonts extends Fonts {
 }
 
 class WindowsFonts extends Fonts {
+  @override
   String thin = "Microsoft YaHei UI Light";
+  @override
   String light = "Microsoft YaHei UI Light";
+  @override
   String regular = "Microsoft YaHei UI";
+  @override
   String medium = "Microsoft YaHei UI";
+  @override
   String semibold = "Microsoft YaHei UI Bold";
+  @override
   String bold = "Microsoft YaHei UI Bold";
 }
 
 class AndroidFonts extends Fonts {
+  @override
   String thin = "sans-serif-thin";
+  @override
   String light = "sans-serif-light";
+  @override
   String regular = "sans-serif";
+  @override
   String medium = "sans-serif-medium";
+  @override
   String semibold =
       "sans-serif-medium"; // Android doesn't have a specific semibold, using medium.
+  @override
   String bold = "sans-serif-bold";
 }
 

@@ -190,7 +190,7 @@ class RequestRowState extends State<RequestRow> {
   }
 
   ///菜单
-  menu(details) {
+  void menu(details) {
     setState(() {
       selected = true;
     });
@@ -379,7 +379,7 @@ class RequestRowState extends State<RequestRow> {
     return TextButton.icon(
         onPressed: onPressed,
         label: Text(label, style: style),
-        icon: Icon(icon, size: iconSize, color: theme.colorScheme.primary.withOpacity(0.65)));
+        icon: Icon(icon, size: iconSize, color: theme.colorScheme.primary.withValues(alpha: 0.65)));
   }
 
   Widget menuItem({required Widget left, required Widget right}) {
